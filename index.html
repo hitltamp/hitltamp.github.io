@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HITL-TAMP</title>
+
+  <!-- <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet"> -->
+
+  <!-- <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <link rel="icon" href="./favicon.ico?">
+
+
+
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <meta property="og:image:width" content="1600" />
+  <meta property="og:image:height" content="900" />
+
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-body no-bottom-padding">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">HITL-TAMP: Human-In-The-Loop Task and Motion Planning for Imitation Learning</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a target="_blank" href="https://ai.stanford.edu/~amandlek/">Ajay Mandlekar</a><sup>*</sup><sup>1</sup>&nbsp;&nbsp;&nbsp;
+                <a target="_blank" href="http://web.mit.edu/caelan/www/">Caelan Garrett</a><sup>*</sup><sup>1</sup>&nbsp;&nbsp;&nbsp;
+                <a target="_blank" href="https://faculty.cc.gatech.edu/~danfei/">Danfei Xu</a><sup>1</sup>&nbsp;&nbsp;&nbsp;
+                <a target="_blank" href="https://homes.cs.washington.edu/~fox/">Dieter Fox</a><sup>1</sup>
+
+                <!-- <br /><sup>1</sup>NVIDIA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>2</sup>NVIDIA -->
+                <br /><sup>1</sup>NVIDIA
+              </span>
+            </div>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="TODO"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <!-- arXiv Link. -->
+                <span class="link-block">
+                  <a target="_blank" href="TODO"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <!-- <span class="link-block">
+                  <a target="_blank" href=""
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span> -->
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="TODO" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+                    </span>
+                    <span>Code (Coming Soon)</span>
+                  </a>
+                </span>
+
+                <!-- twitter Link. -->
+                <span class="link-block">
+                  <a target="_blank" href="TODO"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-twitter"></i>
+                    </span>
+                    <span>Summary</span>
+                  </a>
+                </span>
+              </div>
+  
+            </div>
+            </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+          <div class="columns is-centered">
+            <div class="column is-centered">
+              <video class="center" playsinline autoplay loop muted src="TODO" width="100%" style="border-radius:20px;"></video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- gray box with Abstract -->
+<!--   <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container is-two-thirds">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-two-thirds">
+            <h2 class="title is-3">Abstract</h2>
+          </div>
+      </div>
+    
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds ">
+          <div class="content has-text-justified">
+            Imitation learning is a powerful tool for training robot manipulation policies, allowing them to learn from expert demonstrations without manual programming or trial-and-error. However, common methods of data collection, such as human supervision, scale poorly, as they are time-consuming and labor-intensive. In contrast, Task and Motion Planning (TAMP) can <em>autonomously</em> generate <em>large-scale</em> datasets of <em>diverse</em> demonstrations. In this work, we show that the combination of large-scale datasets generated by TAMP supervisors and flexible Transformer models to fit them is a powerful paradigm for robot manipulation. To this end, we present a novel imitation learning system called Optimus that trains large-scale visuomotor Transformer policies by imitating a TAMP agent. Optimus introduces a pipeline for generating TAMP data that is specifically curated for imitation learning and can be used to train performant transformer-based policies. We demonstrate that Optimus can solve a wide variety of challenging vision-based manipulation tasks with over 70 different objects, ranging from long-horizon and pick-and-place tasks, to shelf and articulated object manipulation, achieving 70 to 80% success rates.
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section> -->
+
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h1 class="title is-2" style="text-align: center; padding-bottom: 10px;">Overview</h1>
+
+          <div class="columns is-centered has-text-centered">
+          <div class="column is-two-thirds ">
+          <div class="content has-text-justified">
+          </div>
+        </div>
+      </div>
+          <div class="columns is-centered">
+            <div class="column is-full" style="text-align: center;">
+              <img src="resources/pull.png" alt="Image description" width="80%">
+              <br>
+              <br>
+              <div class="columns is-centered has-text-centered">
+                <div class="column is-two-thirds">
+                <div class="content has-text-justified interpolation-panel">
+                    <p style="text-align: center;font-size: 18px"> HITL-TAMP decomposes a robot manipulation task (such as making coffee) into planning-based and learning-based control segments. The planning-based segments are handled by a TAMP planner and the learning-based segments are handled by a human demonstrator (during data collection) and a policy trained on demonstrations (during policy deployment).</p>
+                </div>
+              </div>
+            </div>
+            <br>
+              
+            </div>
+          </div>
+         
+  </section>
+
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container is-two-thirds">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-two-thirds">
+            <h2 class="title is-3">Contributions</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+  <div class="hero-body">
+    <div class="container is-two-thirds">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <ol style="list-style-type: decimal; margin-left: 0; text-align: left;">
+            <li>We develop HITL-TAMP, an efficient data-collection system for long-horizon and contact-rich manipulation tasks that synergistically combines and trades off control between a TAMP system and a human teleoperator.</li>
+            <li>HITL-TAMP contains novel components including (1) a mechanism that allows TAMP to learn planning conditions from a small number of demonstrations and (2) a queueing system that allows an operator to manage a fleet of parallel data collection sessions.</li>
+            <li>We conduct a user study across 15 users to compare HITL-TAMP with a conventional teleoperation system. Users collectively gathered over 1.4K demos, more than 3x the conventional system, given the same time budget. Proficient agents (over 75%) could be trained from just 10 minutes of non-expert teleoperation data.</li>
+            <li>We collected an additional 2.1K demos with HITL-TAMP across 12 contact-rich and long-horizon tasks and show that HITL-TAMP often produces near-perfect agents.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-three-quarters">
+        <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>HITL-TAMP trains proficient real-world agents on challenging contact-rich and long-horizon manipulation</strong></h3>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+          <!-- <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>HITL-TAMP trains proficient real-world agents on challenging contact-rich and long-horizon manipulation</strong></h3> -->
+          <!-- <p style="text-align: center; font-size: 22px">Below, we show several uncut videos of HITL-TAMP agent performance on real-world manipulation.</p> -->
+
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <video class="center" playsinline autoplay loop muted src="./resources/real_robot_policies/tool_hang_6x.mov" width="80%" style="border-radius:10px;"></video>
+              <p style="text-align: center; font-size: 22px">HITL-TAMP policy can solve the challenging Tool Hang task.</p>
+            </div>
+          </div>
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <video class="center" playsinline autoplay loop muted src="./resources/real_robot_policies/coffee_broad_both_sides_2x.mov" width="80%" style="border-radius:10px;"></video>
+              <p style="text-align: center; font-size: 22px">HITL-TAMP policy is robust to different initializations.</p>
+            </div>
+          </div>
+<!--           <div class="columns is-centered">
+            <div class="column is-centered">
+              <video class="center" playsinline autoplay loop muted src="./resources/real_robot_policies/coffee_broad_both_sides_2x.mov" width="100%" style="border-radius:10px;"></video>
+            </div>
+            <div class="column is-centered">
+              <video class="center" playsinline autoplay loop muted src="./resources/real_robot_policies/tool_hang_6x.mov" width="100%" style="border-radius:10px;"></video>
+            </div>
+          </div> -->
+          <div class="columns is-centered">
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/real_robot_policies/stack_3x.mov" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Stack Three</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/real_robot_policies/coffee_broad_3.5x.mov" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Coffee Broad</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/real_robot_policies/coffee.mov" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Coffee</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><bold>HITL-TAMP greatly accelerates data collection and often trains near-perfect agents from this data</bold></h3>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+          <!-- <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><bold>HITL-TAMP greatly accelerates data collection and often trains near-perfect agents from this data</bold></h3> -->
+          <h4 class="title is-4" style="text-align: center; padding-bottom: 10px;"><bold>Queueing System</bold></h4>
+          <p style="text-align: center; font-size: 18px">TODO: text</p>
+          <div class="column is-centered">
+            <img src="./resources/queue.png" alt="HITL-TAMP Queueing System" style="border-radius: 10px; width: 100%;">
+          </div>
+          <h4 class="title is-4" style="text-align: center; padding-bottom: 10px;"><bold>Dataset Visualizations</bold></h4>
+          <p style="text-align: center; font-size: 18px">HITL-TAMP's queueing system allows human operators to manage fleets of asynchronously-running data collection sessions. This allows each operator to more effectively use their time and scale the amount of data that they collect. We collected <strong>2.1K+ demos</strong> using the system across these tasks.</p>
+
+          <div class="columns is-centered">
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/sim_datasets/square.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Square</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/sim_datasets/square_broad.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Square Broad</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/sim_datasets/three_piece_assembly.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Three Piece Assembly</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/sim_datasets/three_piece_assembly_broad.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Three Piece Assembly Broad</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="columns is-centered">
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/sim_datasets/coffee.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Coffee</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/sim_datasets/coffee_broad.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Coffee Broad</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/sim_datasets/coffee_full.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Coffee Preparation</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="columns is-centered">
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/sim_datasets/tool_hang.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Tool Hang</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/sim_datasets/tool_hang_broad.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Tool Hang Broad</p>
+              </div>
+            </div>
+          </div>
+
+          <h4 class="title is-4" style="text-align: center; padding-bottom: 10px;"><bold>Trained Policies</bold></h4>
+          <p style="text-align: center; font-size: 18px">Each policy below was trained on 200 demos from HITL-TAMP. Several policies are <strong>near-perfect</strong>.</p>
+
+          <div class="columns is-centered">
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/sim_policies/square_2.5x_trim.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Square (100%)</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/sim_policies/square_broad_2.5x_trim.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Square Broad (100%)</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/sim_policies/three_piece_assembly_2.5x_trim.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Three Piece Assembly (100%)</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/sim_policies/three_piece_assembly_broad_2.5x_trim.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Three Piece Assembly Broad (85%)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="columns is-centered">
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/sim_policies/coffee_2.5x_trim.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Coffee (100%)</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/sim_policies/coffee_broad_2.5x_trim.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Coffee Broad (99%)</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/sim_policies/coffee_full_2.5x_trim.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Coffee Preparation (96%)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="columns is-centered">
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/sim_policies/tool_hang_2.5x_trim.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Tool Hang (81%)</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/sim_policies/tool_hang_broad_2.5x_trim.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Tool Hang Broad (49%)</p>
+              </div>
+            </div>
+          </div>
+
+        </div> 
+      </div>
+    </div>
+  </section>
+
+
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><bold>HITL-TAMP can train performant agents from just 10 minutes of data provided by operators with little to no teleoperation experience</bold></h3>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+          <!-- <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><bold>HITL-TAMP enables novice operators to demonstrate tasks efficiently and policies to be learned from just 10 minutes of data, in contrast to conventional teleoperation systems</bold></h3> -->
+
+          <p style="text-align: center; font-size: 28px">The policies below were trained on just <strong>10 minutes of operator data</strong> from an operator with <strong>little to no experience</strong> with teleoperation. We compare policies trained on 10 minutes of HITL-TAMP data and 10 minutes of conventional teleoperation data.</p>
+
+          <p style="text-align: center; font-size: 28px">Coffee</p>
+          <div class="columns is-centered">
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/user_study_policies/coffee_htamp_novice_2.5x_trim.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 24px"><strong>HITL-TAMP (100%)</strong></p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/user_study_policies/coffee_normal_novice_2.5x_trim.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 24px">Conventional (28%)</p>
+              </div>
+            </div>
+          </div>
+
+          <p style="text-align: center; font-size: 28px">Square Broad</p>
+          <div class="columns is-centered">
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/user_study_policies/square_broad_htamp_novice_2.5x_trim.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 24px"><strong>HITL-TAMP (84%)</strong></p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/user_study_policies/square_broad_normal_novice_2.5x_trim.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 24px">Conventional (0%)</p>
+              </div>
+            </div>
+          </div>
+
+          <p style="text-align: center; font-size: 28px">Three Piece Assembly Broad</p>
+          <div class="columns is-centered">
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/user_study_policies/three_piece_assembly_broad_htamp_novice_2.5x_trim.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 24px"><strong>HITL-TAMP (22%)</strong></p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/user_study_policies/three_piece_assembly_broad_normal_novice_2.5x_trim.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 24px">Conventional (0%)</p>
+              </div>
+            </div>
+          </div>
+
+        </div> 
+      </div>
+    </div>
+  </section>
+
+
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><bold>Task Reset Distributions</bold></h3>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+
+          <h4 class="title is-4" style="text-align: center; padding-bottom: 10px;">Below, we show the reset distributions for each task.</h4>
+
+          <div class="columns is-centered">
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/task_resets/square.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Square</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/task_resets/square_broad.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Square Broad</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/task_resets/three_piece_assembly.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Three Piece Assembly</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/task_resets/three_piece_assembly_broad.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Three Piece Assembly Broad</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="columns is-centered">
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/task_resets/coffee.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Coffee</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/task_resets/coffee_broad.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Coffee Broad</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/task_resets/coffee_full.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Coffee Preparation</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="columns is-centered">
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/task_resets/tool_hang.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Tool Hang</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="video-container">
+                <video class="center" playsinline autoplay loop muted src="./resources/task_resets/tool_hang_broad.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Tool Hang Broad</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- for some reason, had to change "class" above video from "video-container" to "text-center" - otherwise videos were left-aligned - thanks for helping me fix this ChatGPT!-->
+          <div class="columns is-centered">
+            <div class="column is-centered">
+              <div class="text-center">
+                <video class="center" playsinline autoplay loop muted src="./resources/task_resets/stack_three_real.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Stack Three Real</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="text-center">
+                <video class="center" playsinline autoplay loop muted src="./resources/task_resets/coffee_real.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Coffee Real</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="text-center">
+                <video class="center" playsinline autoplay loop muted src="./resources/task_resets/coffee_broad_real.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Coffee Broad Real</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="columns is-centered">
+            <div class="column is-centered">
+              <div class="text-center">
+                <video class="center" playsinline autoplay loop muted src="./resources/task_resets/tool_hang_real.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Tool Hang Real</p>
+              </div>
+            </div>
+          </div>
+
+        </div> 
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><bold>Real World Data Collection</bold></h3>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+
+          <h4 class="title is-4" style="text-align: center; padding-bottom: 10px;">The videos below are from the HITL-TAMP datasets that we used to train our real world agents. The video resolutions matche the image resolutions used for policy training.</h4>
+
+          <!-- for some reason, had to change "class" above video from "video-container" to "text-center" - otherwise videos were left-aligned - thanks for helping me fix this ChatGPT!-->
+          <div class="columns is-centered">
+            <div class="column is-centered">
+              <div class="text-center">
+                <video class="center" playsinline autoplay loop muted src="./resources/real_robot_datasets/stack_three_real_trim_4x.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Stack Three Real</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="text-center">
+                <video class="center" playsinline autoplay loop muted src="./resources/real_robot_datasets/coffee_real_trim_4x.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Coffee Real</p>
+              </div>
+            </div>
+            <div class="column is-centered">
+              <div class="text-center">
+                <video class="center" playsinline autoplay loop muted src="./resources/real_robot_datasets/coffee_broad_real_trim_20x.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Coffee Broad Real</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="columns is-centered">
+            <div class="column is-centered">
+              <div class="text-center">
+                <video class="center" playsinline autoplay loop muted src="./resources/real_robot_datasets/tool_hang_real_trim_5x.mp4" style="border-radius:10px;"></video>
+                <p style="text-align: center; font-size: 18px">Tool Hang Real</p>
+              </div>
+            </div>
+          </div>
+
+        </div> 
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><bold>Full Supplemental Video</bold></h3>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+          <div class="columns is-centered">
+            <div class="column is-centered">
+              <!-- <video class="center" playsinline autoplay loop muted src="./resources/optimus/optimus_gallery.mp4" width="100%" style="border-radius:20px;"></video> -->
+              <video class="center" playsinline loop muted controls src="./resources/supplemental.mp4" width="100%" style="border-radius:20px;"></video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3">Project Video</h2>
+          </div>
+      </div>
+    
+  
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-max-desktop">
+          <div id="method_video" class="publication-video">
+            <iframe src="https://www.youtube.com/embed/WdMYGESu8Ak" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div> -->
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{mandlekar2023hitltamp,
+    title={Human-In-The-Loop Task and Motion Planning for Imitation Learning},
+    author={Mandlekar, Ajay and Garrett, Caelan and Xu, Danfei and Fox, Dieter},
+    journal={Arxiv},
+    year={2023}
+}</code></pre>
+    </div>
+  </section>
+  
+  <section class="section">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+    <div class="is-vcentered interpolation-panel">
+      <div class="container content has-text-centered">
+        <p style="font-size: 16px">
+          TODO
+        </p>
+      </div>
+    </div>
+  </div>  
+  </section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <br />
+      <p> Template from <a href="https://nerfies.github.io"><span class="dnerf">Nerfies</span></a>.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+
