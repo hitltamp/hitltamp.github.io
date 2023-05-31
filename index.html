@@ -218,7 +218,7 @@
             <li>We introduce HITL-TAMP, an efficient data-collection system for long-horizon and contact-rich manipulation tasks that synergistically combines and trades off control between a TAMP system and a human teleoperator.<br><br></li>
             <li>HITL-TAMP contains novel components including (1) a mechanism that allows TAMP to learn planning conditions from a small number of demonstrations and (2) a queueing system that allows an operator to manage a fleet of parallel data collection sessions.<br><br></li>
             <li>We conduct a user study across 15 users to compare HITL-TAMP with a conventional teleoperation system. Users collectively gathered over 1.4K demos, more than 3x the conventional teleoperation system, given the same time budget. <strong>Proficient agents (over 75% success)</strong> could be trained from <strong>just 10 minutes of non-expert teleoperation data</strong>.<br><br></li>
-            <li>We collected an additional <strong>2.1K demos</strong> with HITL-TAMP across <strong>12 contact-rich and long-horizon tasks</strong> and show that HITL-TAMP often produces <strong>near-perfect agents</strong>. This took a single operator a <strong>few hours</strong>, as opposed to operator teams and days needed in prior work.</li>
+            <li>We collected an additional <strong>2.1K demos</strong> with HITL-TAMP across <strong>12 contact-rich and long-horizon tasks</strong> and show that HITL-TAMP often produces <strong>near-perfect agents</strong>. Collecting this data took a single operator a <strong>few hours</strong>, as opposed to operator teams and days needed in prior work.</li>
           </ol>
         </div>
       </div>
@@ -307,12 +307,12 @@
         <div class="column is-three-quarters">
           <!-- <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><bold>HITL-TAMP greatly accelerates data collection and often trains near-perfect agents from this data</bold></h3> -->
           <h4 class="title is-4" style="text-align: center; padding-bottom: 10px;"><bold>Queueing System</bold></h4>
-          <p style="text-align: center; font-size: 18px">TODO: text</p>
+          <p style="text-align: center; font-size: 18px">Since humans only need to demonstrate small pieces of each task, they <strong>can participate in several data collection sessions at once</strong>. Human operators interact asynchronously with a fleet of several robots using our queueing system, which schedules tasks to ensure humans are always kept busy, <strong>enabling large-scale data collection</strong>.</p>
           <div class="column is-centered">
             <img src="./resources/queue.png" alt="HITL-TAMP Queueing System" style="border-radius: 10px; width: 100%;">
           </div>
           <h4 class="title is-4" style="text-align: center; padding-bottom: 10px;"><bold>Dataset Visualizations</bold></h4>
-          <p style="text-align: center; font-size: 18px">HITL-TAMP's queueing system allows human operators to manage fleets of asynchronously-running data collection sessions. This allows each operator to more effectively use their time and scale the amount of data that they collect. We collected <strong>2.1K+ demos</strong> using the system across these tasks.</p>
+          <p style="text-align: center; font-size: 18px">We collected <strong>2.1K+ demos</strong> using the system across these tasks. This took a single operator a <strong>few hours</strong>, as opposed to operator teams and days needed in prior work. Similarly, in our user study, given a fixed time budget, users collected much more data with HITL-TAMP (<strong>over 3x more</strong>) compared to conventional teleoperation.</p>
 
           <div class="columns is-centered">
             <div class="column is-centered">
@@ -468,7 +468,7 @@
         <div class="column is-three-quarters">
           <!-- <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><bold>HITL-TAMP enables novice operators to demonstrate tasks efficiently and policies to be learned from just 10 minutes of data, in contrast to conventional teleoperation systems</bold></h3> -->
 
-          <p style="text-align: center; font-size: 28px">The policies below were trained on just <strong>10 minutes of operator data</strong> from an operator with <strong>little to no experience</strong> with teleoperation. We compare policies trained on 10 minutes of HITL-TAMP data and 10 minutes of conventional teleoperation data.</p>
+          <p style="text-align: center; font-size: 18px">The policies below were trained on just <strong>10 minutes of operator data</strong> from an operator with <strong>little to no experience</strong> with teleoperation. We compare policies trained on 10 minutes of HITL-TAMP data and 10 minutes of conventional teleoperation data.</p>
 
           <p style="text-align: center; font-size: 28px">Coffee</p>
           <div class="columns is-centered">
@@ -659,7 +659,7 @@
       <div class="columns is-centered">
         <div class="column is-three-quarters">
 
-          <h4 class="title is-4" style="text-align: center; padding-bottom: 10px;">The videos below are from the HITL-TAMP datasets that we used to train our real world agents. The video resolutions matche the image resolutions used for policy training.</h4>
+          <p style="text-align: center; font-size: 18px">The videos below are from the HITL-TAMP datasets that we used to train our real world agents. The video resolutions match the image resolutions used for policy training.<br><br></p>
 
           <!-- for some reason, had to change "class" above video from "video-container" to "text-center" - otherwise videos were left-aligned - thanks for helping me fix this ChatGPT!-->
           <div class="columns is-centered">
