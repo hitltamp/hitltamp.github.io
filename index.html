@@ -57,9 +57,11 @@
                 <a target="_blank" href="https://ai.stanford.edu/~amandlek/">Ajay Mandlekar</a><sup>*</sup><sup>1</sup>&nbsp;&nbsp;&nbsp;
                 <a target="_blank" href="http://web.mit.edu/caelan/www/">Caelan Garrett</a><sup>*</sup><sup>1</sup>&nbsp;&nbsp;&nbsp;
                 <a target="_blank" href="https://faculty.cc.gatech.edu/~danfei/">Danfei Xu</a><sup>1, 2</sup>&nbsp;&nbsp;&nbsp;
-                <a target="_blank" href="https://homes.cs.washington.edu/~fox/">Dieter Fox</a><sup>1, 3</sup>
+                <!-- <a target="_blank" href="https://homes.cs.washington.edu/~fox/">Dieter Fox</a><sup>1, 3</sup> -->
+                <a target="_blank" href="https://homes.cs.washington.edu/~fox/">Dieter Fox</a><sup>1</sup>
 
-                <br /><sup>1</sup>NVIDIA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>2</sup>Georgia Tech&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>3</sup>University of Washington
+                <!-- <br /><sup>1</sup>NVIDIA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>2</sup>Georgia Tech&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>3</sup>University of Washington -->
+                <br /><sup>1</sup>NVIDIA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>2</sup>Georgia Institute of Technology
                 <!-- <br /><sup>1</sup>NVIDIA -->
               </span>
             </div>
@@ -134,7 +136,7 @@
         <div class="column is-three-quarters">
           <div class="columns is-centered">
             <div class="column is-centered">
-              <video class="center" playsinline autoplay loop muted src="./resources/main.mp4" width="100%" style="border-radius:20px;"></video>
+              <video class="center" playsinline autoplay loop controls muted src="./resources/main.mp4" width="100%" style="border-radius:20px;"></video>
             </div>
           </div>
         </div>
@@ -165,31 +167,53 @@
     </div>
   </section> -->
 
+  <section class="hero is-light is-small">
+  <div class="hero-body">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-three-quarters">
+        <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"><strong>HITL-TAMP combines the benefits of imitation learning and TAMP to solve contact-rich and long-horizon manipulation</strong></h3>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
 
   <section class="section">
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-full-width">
-          <h1 class="title is-2" style="text-align: center; padding-bottom: 10px;">Overview</h1>
+          <!-- <h1 class="title is-2" style="text-align: center; padding-bottom: 10px;">HITL-TAMP Imitation Learning System</h1> -->
 
-          <div class="columns is-centered has-text-centered">
-          <div class="column is-two-thirds ">
-          <div class="content has-text-justified">
-          </div>
-        </div>
-      </div>
           <div class="columns is-centered">
-            <div class="column is-full" style="text-align: center;">
-              <img src="resources/pull.png" alt="Image description" width="80%">
-              <br>
-              <br>
-              <div class="columns is-centered has-text-centered">
-                <div class="column is-two-thirds">
-                <div class="content has-text-justified interpolation-panel">
-                    <p style="text-align: center;font-size: 18px"> HITL-TAMP decomposes a robot manipulation task (such as making coffee) into planning-based and learning-based control segments. The planning-based segments are handled by a TAMP planner and the learning-based segments are handled by a human demonstrator (during data collection) and a policy trained on demonstrations (during policy deployment).</p>
-                </div>
-              </div>
+            <div class="column is-three-quarters" style="text-align: center;">
+              <!-- <img src="resources/pull.png" alt="Image description" width="80%"> -->
+              <video class="center" playsinline autoplay loop muted src="./resources/isaac_sim/htamp_tool_hang_ds_no_label.mp4" width="80%" style="border-radius:10px;"></video>
+              <br><br>
+              <p style="text-align: center; font-size: 20px">During data collection, the TAMP system defers task portions it does not know how to complete to a human operator. This greatly reduces the data collection burden on the human operator, who does not need to demonstrate the full task.</p>
+            <br>
+              
             </div>
+          </div>
+
+          <div class="columns is-centered">
+            <div class="column is-three-quarters" style="text-align: center;">
+              <!-- <img src="resources/pull.png" alt="Image description" width="80%"> -->
+              <video class="center" playsinline autoplay loop muted src="./resources/isaac_sim/htamp_tool_hang_policy_no_label.mp4" width="80%" style="border-radius:10px;"></video>
+              <br><br>
+              <p style="text-align: center; font-size: 20px">During deployment, TAMP defers task portions to an autonomous robot trained via imitation learning on the collected data. This enables TAMP to work for contact-rich manipulation without accurate models.</p>
+            <br>
+              
+            </div>
+          </div>
+
+          <div class="columns is-centered">
+            <div class="column is-three-quarters" style="text-align: center;">
+              <!-- <img src="resources/pull.png" alt="Image description" width="80%"> -->
+              <video class="center" playsinline autoplay loop muted src="./resources/isaac_sim/coffee_prep_htamp_policy_isaac_sim_2x.mp4" width="80%" style="border-radius:10px;"></video>
+              <br><br>
+              <p style="text-align: center; font-size: 20px">Long-horizon tasks can be difficult for standard imitation learning approaches. By contrast, the HITL-TAMP framework easily scales to long-horizon tasks such as this coffee preparation task, which consists of 8 stages (4 TAMP and 4 policy segments).</p>
             <br>
               
             </div>
@@ -197,7 +221,8 @@
          
   </section>
 
-  <section class="hero is-light is-small">
+<!-- TODO: decide whether to keep contributions -->
+<!--   <section class="hero is-light is-small">
     <div class="hero-body">
       <div class="container is-two-thirds">
         <div class="columns is-centered has-text-centered">
@@ -224,7 +249,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <section class="hero is-light is-small">
   <div class="hero-body">
