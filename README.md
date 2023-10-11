@@ -1,1 +1,3 @@
-# Human-in-the-Loop Task and Motion Planning
+# HITL-TAMP Website
+
+Website for [HITL-TAMP](https://hitltamp.github.io/).
